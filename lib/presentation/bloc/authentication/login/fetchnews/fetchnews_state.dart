@@ -1,20 +1,17 @@
-part of 'fetchnews_bloc.dart';
+import 'package:creative/data/models/newsmodel/news_model.dart';
 
-@immutable
 sealed class FetchnewsState {}
 
 final class FetchnewsInitial extends FetchnewsState {}
 
-class FetcNewsLoadingState extends FetchnewsState {
-  
-}
+class FetchNewsLoadingState extends FetchnewsState {}
+
 class FetchNewsErrorState extends FetchnewsState {
-  final String message;
-  FetchNewsErrorState(this.message);
-  
+  final String error;
+  FetchNewsErrorState(this.error);
 }
-class FetchNewsSuccesState extends FetchnewsState {
-  final List<NewsModel> news;
-  FetchNewsSuccesState(this.news);
-  
+
+class FetchNewsSuccessState extends FetchnewsState {
+  final NewsModel newsModel;
+  FetchNewsSuccessState(this.newsModel);
 }

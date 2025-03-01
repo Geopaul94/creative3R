@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   final List<Widget> _screens = [
     const HomeScreen(), // Index 0
     const ProfileScreen(), // Index 1
-    const NewsScreen(), // Index 2
+     NewsScreen(), // Index 2
     const MoreScreen(), // Index 3
   ];
 
