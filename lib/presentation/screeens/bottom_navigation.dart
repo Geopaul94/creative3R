@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   // List of screens to match the MotionTabBar tabs
   final List<Widget> _screens = [
     const HomeScreen(), // Index 0
-    const ProfileScreen(), // Index 1
+     ProfileScreen(), // Index 1
      NewsScreen(), // Index 2
     const MoreScreen(), // Index 3
   ];
