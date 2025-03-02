@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           //theme: Provider.of<ThemeProvider>(context).themeData,
           home: BlocProvider(
             create: (context) => FetchnewsBloc(),
-            child: ForgotPasswordScreen(),
+            child: ProfileScreen(),
           ),
           debugShowCheckedModeBanner: false,
         );

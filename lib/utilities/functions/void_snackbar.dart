@@ -1,7 +1,15 @@
+import 'package:creative/presentation/widgets/custome_snackbar.dart';
 import 'package:flutter/material.dart';
 
-void showCustomSnackBar(BuildContext context, String message,
-    {Color backgroundColor = Colors.red}) {
+void showCustomSnackBar(BuildContext context, dynamic messageOrException,
+    {Color backgroundColor = Colors.red}) { String message;
+  if (messageOrException is Exception || messageOrException is Error) {
+    // Handle exceptions by mapping them to user-friendly messages
+    message = getFriendlyErrorMessage(messageOrException);
+  } else {
+    // If a plain string message is passed, use it directly
+    message = messageOrException.toString();
+  }
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Padding(
