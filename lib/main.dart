@@ -1,7 +1,9 @@
 import 'package:creative/presentation/bloc/authentication/login/fetchnews/fetchnews_bloc.dart';
-import 'package:creative/presentation/screeens/authentication/login_page.dart';
+import 'package:creative/presentation/screeens/authentication/forgot_password_screen.dart';
+import 'package:creative/presentation/screeens/authentication/login_screen.dart';
 import 'package:creative/presentation/screeens/bottom_navigation.dart';
 import 'package:creative/presentation/screeens/home_screen.dart';
+import 'package:creative/presentation/screeens/market_data.dart';
 import 'package:creative/presentation/screeens/news_screen.dart';
 import 'package:creative/presentation/screeens/profile_screen.dart';
 import 'package:creative/presentation/screeens/splash_screen.dart';
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
           //theme: Provider.of<ThemeProvider>(context).themeData,
           home: BlocProvider(
             create: (context) => FetchnewsBloc(),
-            child: ProfileScreen(),
+            child: ForgotPasswordScreen(),
           ),
           debugShowCheckedModeBanner: false,
         );

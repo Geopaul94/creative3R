@@ -24,8 +24,8 @@ class CompanyInfo {
   final String companyName;
   final String address;
   final String email;
-  final String contact;  // Stored as String for phone number formatting
-  final String whatsapp; // Stored as String for phone number formatting
+  final String contact;  
+  final String whatsapp; 
 
   CompanyInfo({
     required this.id,

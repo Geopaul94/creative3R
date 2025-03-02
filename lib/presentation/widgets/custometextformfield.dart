@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class CustomTextFormField extends StatefulWidget {
   final String labelText;
   final IconData icon;
@@ -13,11 +12,12 @@ class CustomTextFormField extends StatefulWidget {
   final Color errorBorderColor;
   final Color focusedErrorBorderColor;
   final TextStyle? errorTextStyle;
+  final Color textColor;
   final Color labelTextColor;
   final Color hintTextColor;
 
-  const CustomTextFormField({
-    super.key,
+  CustomTextFormField({
+    Key? key,
     required this.labelText,
     required this.icon,
     required this.controller,
@@ -26,19 +26,20 @@ class CustomTextFormField extends StatefulWidget {
     this.hintText,
     this.keyboardType = TextInputType.text,
     this.errorBorderColor = Colors.red,
-    this.focusedErrorBorderColor = Colors.green,
+    this.focusedErrorBorderColor = const Color.fromARGB(255, 221, 200, 15),
     this.errorTextStyle,
     this.labelTextColor = Colors.grey,
+    this.textColor = Colors.white,
     this.hintTextColor = Colors.grey,
     this.errorTextColor = Colors.red,
-  });
+  }) : super(key: key);
 
   @override
   _CustomTextFormFieldState createState() => _CustomTextFormFieldState();
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  bool _obscureText = true;
+  late bool _obscureText;
 
   @override
   void initState() {
@@ -52,13 +53,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       controller: widget.controller,
       obscureText: _obscureText,
       keyboardType: widget.keyboardType,
+      style: TextStyle(color: widget.textColor),
       decoration: InputDecoration(
         labelText: widget.labelText,
-        prefixIcon: Icon(widget.icon),
+        prefixIcon: Icon(widget.icon, color: Colors.grey[400]),
         suffixIcon: widget.obscureText
             ? IconButton(
                 icon: Icon(
-                  _obscureText ? Icons.visibility : Icons.visibility_off,
+                  _obscureText ? Icons.visibility_off : Icons.visibility,
+                  color: Colors.grey[400],
                 ),
                 onPressed: () {
                   setState(() {
@@ -69,16 +72,17 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             : null,
         errorStyle: TextStyle(color: widget.errorTextColor),
         hintText: widget.hintText,
+        hintStyle: TextStyle(color: widget.hintTextColor),
         labelStyle: TextStyle(color: widget.labelTextColor),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.white),
+          borderSide: BorderSide(color:  Colors.yellow.shade400),
           borderRadius: BorderRadius.circular(10.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.green),
+          borderSide: BorderSide(color: Colors.yellow.shade400),
           borderRadius: BorderRadius.circular(10.0),
         ),
         errorBorder: OutlineInputBorder(

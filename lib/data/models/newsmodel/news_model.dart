@@ -1,36 +1,3 @@
-// class NewsModel {
-//   final bool success;
-//   final Map<String, dynamic> info; // Specify map type parameters
-//   final String message;
-
-//   NewsModel({
-//     required this.success,
-//     required this.info,
-//     required this.message,
-//   });
-
-//   // Corrected manual parsing
-//   factory NewsModel.fromJson(Map<String, dynamic> json) {
-//     return NewsModel(
-//       success: json['success'] as bool,
-//       info: json['info'] as Map<String, dynamic>, // Direct cast to Map
-//       message: json['message'] as String,
-//     );
-//   }
-
-//   // Corrected manual serialization
-//   Map<String, dynamic> toJson() {
-//     return {
-//       'success': success,
-//       'info': info, // Maps serialize directly
-//       'message': message,
-//     };
-//   }
-// }
-
-
-
-
 
 
 class NewsModel {

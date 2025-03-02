@@ -1,18 +1,18 @@
-part of 'login_bloc.dart';
 
-@immutable
+import 'package:creative/data/models/userModel/authentication_model.dart';
+
 sealed class LoginEvent {}
 
 class OnLogingButtonPressedEvent extends LoginEvent {
-
-final UserAuthenticationModel userAuthenticationModel;
+  final UserAuthenticationModel userAuthenticationModel;
 
   OnLogingButtonPressedEvent({required this.userAuthenticationModel});
-
 }
 
 class OnForgotPasswordButtonPressedEvent extends LoginEvent {
-  final String password;
+  final UserAuthenticationModel forgotpassowrd;
 
-  OnForgotPasswordButtonPressedEvent({required this.password});
+  OnForgotPasswordButtonPressedEvent({required this.forgotpassowrd});
+
+ 
 }
