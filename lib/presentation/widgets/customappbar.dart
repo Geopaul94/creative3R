@@ -1,3 +1,4 @@
+import 'package:creative/presentation/widgets/custom_bottom_sheet.dart';
 import 'package:creative/presentation/widgets/custom_text.dart';
 import 'package:creative/utilities/constants/constants.dart';
 import 'package:flutter/material.dart';
@@ -57,20 +58,7 @@ class Customappbar extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          // Spacer(),
-          // CircleAvatar(
-          //   backgroundColor: Colors.yellow,
-          //   child: IconButton(
-          //     icon: SvgPicture.asset(
-          //       'assets/images/icons8-notification.svg', // Path to your notification SVG icon
-          //       color: Colors.black,
-          //     ),
-          //     onPressed: () {
-          //       // Handle notification icon press
-          //     },
-          //   ),
-          // ),
-
+         
           Stack(
   alignment: Alignment.center,
   children: [
@@ -82,7 +70,7 @@ class Customappbar extends StatelessWidget {
           color: Colors.black,
         ),
         onPressed: () {
-          // Handle notification icon press
+          showCustomBottomSheet(context);
         },
       ),
     ),

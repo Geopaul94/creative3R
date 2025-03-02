@@ -21,14 +21,10 @@ const Color purple = Colors.purple;
 const lightgrey = Color.fromARGB(255, 210, 210, 210);
 const darkgreymain = Color.fromARGB(255, 21, 21, 22);
 
+var greyshade = Colors.grey.shade300;
+const Color black = Colors.black;
 
-
-
-var  greyshade =Colors.grey.shade300;
-const Color black =Colors.black;
-
-const Color floatingActionButtoncolor=Colors.blue;
-
+const Color floatingActionButtoncolor = Colors.blue;
 
 const kPrimaryColor = Color(0xFF00D1FF);
 const textFieldBorderColor = Color(0xFFCDCDCD);
@@ -41,13 +37,7 @@ const kwhiteColor = Colors.white;
 const Color oceanGreen = Color(0xFF48A9A6);
 const blueAccent = Colors.blueAccent;
 
-
 const Color customIconColor = green;
-
-
-
-
-
 
 const double defaultpadding = 16.0;
 // const String  header =  "Content-Type": "application/json";
@@ -66,7 +56,6 @@ const TextStyle colorizeTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontFamily: 'Horizon',
 );
-
 
 //auth key
 const authKey = 'UserLoggedIn';
@@ -89,10 +78,11 @@ const userNamekey = 'userName';
 //userProfilepic key sharedpreference
 const userProfilePickey = 'userProfilePic';
 
-
 // Text Styles
-TextStyle profileStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp);
-TextStyle profileStyle2 = TextStyle(fontWeight: FontWeight.w500, fontSize: 15.sp);
+TextStyle profileStyle =
+    TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp);
+TextStyle profileStyle2 =
+    TextStyle(fontWeight: FontWeight.w500, fontSize: 15.sp);
 
 // SizedBoxes for heights (using .h for responsive height)
 SizedBox h5 = SizedBox(height: 5.h);
@@ -110,8 +100,9 @@ SizedBox h100 = SizedBox(height: 100.h);
 SizedBox w10 = SizedBox(width: 10.w);
 SizedBox w20 = SizedBox(width: 20.w);
 SizedBox w30 = SizedBox(width: 30.w);
+SizedBox w50 = SizedBox(width: 50.w);
 SizedBox w40 = SizedBox(width: 40.w);
-SizedBox kwidth = SizedBox(width: 10.w);
+SizedBox w60 = SizedBox(width: 60.w);
 
 // Other Styles
 TextStyle appBarTitleStyle = TextStyle(

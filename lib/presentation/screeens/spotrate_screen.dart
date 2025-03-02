@@ -6,8 +6,8 @@ import 'package:creative/presentation/widgets/custome_snackbar.dart';
 import 'package:creative/utilities/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 
 class CommodityContainer extends StatelessWidget {
   final Commodity commodity;
@@ -38,7 +38,7 @@ class CommodityContainer extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.monetization_on, color: Colors.amber[300], size: 28),
+                //  Icon(Icons.monetization_on, color: Colors.amber[300], size: 28),
                 const SizedBox(width: 12),
                 Text(
                   commodity.metal,
@@ -63,6 +63,10 @@ class CommodityContainer extends StatelessWidget {
                   icon: Icons.scale,
                   title: 'Weight',
                   value: commodity.weight,
+                ),
+                Lottie.asset(
+                  'assets/animation/candle.json',
+                  width: 100.w,
                 ),
                 _buildDetailItem(
                   icon: Icons.format_list_numbered,
