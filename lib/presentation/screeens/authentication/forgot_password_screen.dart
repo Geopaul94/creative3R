@@ -9,6 +9,7 @@ import 'package:creative/presentation/widgets/custome_snackbar.dart';
 import 'package:creative/presentation/widgets/custometextformfield.dart';
 import 'package:creative/presentation/widgets/validations%20copy.dart';
 import 'package:creative/utilities/constants/constants.dart';
+import 'package:creative/utilities/functions/void_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -67,9 +68,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     left: 10.w,
                     child: GestureDetector(
                       onTap: () {
+                        print('object                     22');
                         Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            CupertinoPageRoute(
                               builder: (context) => LoginScreen(),
                             ));
                       },
@@ -95,11 +97,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             fontWeight: FontWeight.bold,
                             color: Colors.yellow,
                           ),
-                          Lottie.asset(
-                            'assets/animation/gold3.json',
-                            width: 60.w,
-                            height: 60.h,
-                          ),
+                          // Lottie.asset(
+                          //   'assets/animation/gold3.json',
+                          //   width: 60.w,
+                          //   height: 60.h,
+                          // ),
                         ],
                       ),
                     ),
@@ -124,11 +126,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
-                              CustomText(
-                                text: 'Reset Password',
-                                fontSize: 30,
-                                color: grey,
-                              ),
+                              resetPasswordText(),
+                              h10,
                               CustomTextFormField(
                                 keyboardType: TextInputType.phone,
                                 labelText: 'Phone number',
@@ -156,7 +155,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 obscureText: true,
                               ),
                               h20,
-
                               BlocBuilder<LoginBloc, LoginState>(
                                 builder: (context, state) {
                                   if (state is ForgotPasswordLoadingState) {
@@ -164,39 +162,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                       child: CircularProgressIndicator(),
                                     );
                                   }
-                                  return CustomGradientButton(
-                                    text: 'Reset Password',
-                                    onPressed: () {
-                                      if (_formKey.currentState!.validate() &&
-                                          _passwordController.text ==
-                                              _confirmpasswordController.text) {
-                                        final UserAuthenticationModel user =
-                                            UserAuthenticationModel(
-                                                phonenumber:
-                                                    _phoneNumberController.text,
-                                                password:
-                                                    _passwordController.text);
-                                        print('Reset pressed');
-
-                                        context.read<LoginBloc>().add(
-                                            OnForgotPasswordButtonPressedEvent(
-                                                forgotpassowrd: user));
-                                      }
-                                    },
-                                    width: double.infinity,
-                                    height: 60,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    gradientColors: const [
-                                      Colors.blue,
-                                      Colors.purple
-                                    ],
-                                  );
+                                  return resetPassword(context);
                                 },
                               ),
                               h10,
-
-                          
                             ],
                           ),
                         ),
@@ -209,6 +178,63 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           );
         },
       ),
+    );
+  }
+
+  Row resetPasswordText() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomText(
+              text: 'Reset Password',
+              fontSize: 30,
+              color: grey,
+              fontWeight: FontWeight.w700,
+            ),
+            CustomText(
+              text: 'Enter your phone number  and new \npassword',
+              fontSize: 20,
+              color: grey,
+              fontWeight: FontWeight.w400,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  CustomGradientButton resetPassword(BuildContext context) {
+    return CustomGradientButton(
+      text: 'Reset Password',
+      onPressed: () {
+        if (_passwordController.text != _confirmpasswordController.text) {
+          showCustomSnackBar(context, 'Password does not match',
+              backgroundColor: red);
+        }
+        if (_formKey.currentState!.validate() &&
+            _passwordController.text == _confirmpasswordController.text) {
+          final UserAuthenticationModel user = UserAuthenticationModel(
+              phonenumber: _phoneNumberController.text,
+              password: _passwordController.text);
+          print('Reset pressed');
+
+          context
+              .read<LoginBloc>()
+              .add(OnForgotPasswordButtonPressedEvent(forgotpassowrd: user));
+        }
+      },
+      width: double.infinity,
+      height: 60,
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+      gradientColors: [
+        Colors.grey[900]!,
+        Colors.amber[700]!,
+        Colors.amber[400]!,
+      ],
     );
   }
 }

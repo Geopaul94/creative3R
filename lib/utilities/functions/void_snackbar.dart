@@ -21,7 +21,7 @@ void showCustomSnackBar(BuildContext context, dynamic messageOrException,
         ),
       ),
       backgroundColor: backgroundColor, 
-      duration: Duration(seconds: 1), 
+      duration: Duration(seconds: 2), 
       behavior: SnackBarBehavior
           .floating, 
       shape: RoundedRectangleBorder(

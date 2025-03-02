@@ -5,14 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
-Future<void> navigateToLoginScreen(BuildContext context) async {
-  await Future.delayed(Duration(seconds: 2));
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => LoginScreen()),
-  );
-}
-
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -88,6 +80,14 @@ class _SplashScreenState extends State<SplashScreen>
           ],
         ),
       ),
+    );
+  }
+
+  Future<void> navigateToLoginScreen(BuildContext context) async {
+    await Future.delayed(Duration(seconds: 2));
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => LoginScreen()),
     );
   }
 }

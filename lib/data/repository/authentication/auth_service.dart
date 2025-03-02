@@ -49,7 +49,7 @@ class AuthService {
       final uri = Uri.parse(
           '${apiUrlEndPoints.baseUrl}/${apiUrlEndPoints.forgotpassowrd}/${apiUrlEndPoints.adminId}');
       // Create a map for the request body
-   
+
       final response = await http.put(uri,
           headers: apiUrlEndPoints.headers, body: jsonEncode(userModel));
 
