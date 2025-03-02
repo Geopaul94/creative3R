@@ -9,7 +9,7 @@ class ApiUrlEndPoints {
 
   final String getnews = 'user/get-news';
 
-  final String spotrates = 'user/get-spotrates';
+  final String getspotrates = 'user/get-spotrates';
 
   final String getcommodities = 'user/get-commodities';
   

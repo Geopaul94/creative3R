@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
           if (state is LoginSucessState) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const MyHomePage()),
+              MaterialPageRoute(builder: (context) =>  BottomNavigationDrop()),
             );
 
             customSnackbar(context, 'Have a good trade ', Colors.yellow);

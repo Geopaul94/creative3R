@@ -1,8 +1,6 @@
-
-
 class NewsModel {
   final bool success;
-  final NewsData newsData; 
+  final NewsData newsData;
   final String message;
 
   NewsModel({
@@ -22,7 +20,7 @@ class NewsModel {
 
 class NewsData {
   final String id;
-  final List<NewsItem> newsItems; 
+  final List<NewsItem> newsItems;
   final String createdBy;
   final int version;
 

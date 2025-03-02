@@ -2,11 +2,14 @@ import 'package:creative/presentation/bloc/authentication/login/fetchnews/fetchn
 import 'package:creative/presentation/screeens/authentication/forgot_password_screen.dart';
 import 'package:creative/presentation/screeens/authentication/login_screen.dart';
 import 'package:creative/presentation/screeens/bottom_navigation.dart';
+import 'package:creative/presentation/screeens/commodities_screen.dart';
 import 'package:creative/presentation/screeens/home_screen.dart';
 import 'package:creative/presentation/screeens/market_data.dart';
 import 'package:creative/presentation/screeens/news_screen.dart';
 import 'package:creative/presentation/screeens/profile_screen.dart';
 import 'package:creative/presentation/screeens/splash_screen.dart';
+import 'package:creative/presentation/screeens/spotrate_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,9 +34,16 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           //theme: Provider.of<ThemeProvider>(context).themeData,
-          home: BlocProvider(
-            create: (context) => FetchnewsBloc(),
-            child: ProfileScreen(),
+          home: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => FetchnewsBloc(),
+              ),
+              // BlocProvider(
+              //   create: (context) => FetchSpotrateBloc(),
+              // ),
+            ],
+            child: BottomNavigationDrop(),
           ),
           debugShowCheckedModeBanner: false,
         );
