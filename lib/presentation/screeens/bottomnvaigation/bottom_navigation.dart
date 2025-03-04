@@ -1,8 +1,8 @@
-import 'package:creative/presentation/bloc/authentication/login/fetchnews/fetchnews_bloc.dart';
-import 'package:creative/presentation/screeens/home_screen.dart';
-import 'package:creative/presentation/screeens/more_screen.dart';
-import 'package:creative/presentation/screeens/news_screen.dart';
-import 'package:creative/presentation/screeens/profile_screen.dart';
+import 'package:creative/presentation/bloc/fetchnews/fetchnews_bloc.dart';
+import 'package:creative/presentation/screeens/homescreen/home_screen.dart';
+import 'package:creative/presentation/screeens/morescreen/more_screen.dart';
+import 'package:creative/presentation/screeens/newsscreen/news_screen.dart';
+import 'package:creative/presentation/screeens/profilescreen/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 

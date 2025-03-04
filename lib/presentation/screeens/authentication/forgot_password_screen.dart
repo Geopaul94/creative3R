@@ -188,12 +188,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomText(
-              text: 'Reset Password',
-              fontSize: 30,
-              color: grey,
-              fontWeight: FontWeight.w700,
-            ),
+         
             CustomText(
               text: 'Enter your phone number  and new \npassword',
               fontSize: 20,

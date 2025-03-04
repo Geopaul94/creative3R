@@ -393,8 +393,4 @@ class ProfileScreen extends StatelessWidget {
       SnackBar(content: Text('Copied $text to clipboard')),
     );
   }
-
-  void _handleLogout(BuildContext context) {
-    print('Logout pressed');
-  }
 }

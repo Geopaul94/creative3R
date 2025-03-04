@@ -1,15 +1,12 @@
 import 'package:creative/data/models/newsmodel/news_model.dart';
-import 'package:creative/presentation/bloc/authentication/login/fetchnews/fetchnews_bloc.dart';
-import 'package:creative/presentation/bloc/authentication/login/fetchnews/fetchnews_event.dart';
-import 'package:creative/presentation/bloc/authentication/login/fetchnews/fetchnews_state.dart';
-import 'package:creative/presentation/widgets/CustomeAppbar.dart';
+import 'package:creative/presentation/bloc/fetchnews/fetchnews_bloc.dart';
+import 'package:creative/presentation/bloc/fetchnews/fetchnews_event.dart';
+import 'package:creative/presentation/bloc/fetchnews/fetchnews_state.dart';
 import 'package:creative/presentation/widgets/customappbar.dart';
 import 'package:creative/utilities/constants/constants.dart';
 import 'package:creative/utilities/functions/new_time_format.dart';
-import 'package:creative/utilities/functions/void_snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NewsScreen extends StatefulWidget {
   const NewsScreen({super.key});

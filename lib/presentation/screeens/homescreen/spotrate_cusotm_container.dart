@@ -1,3 +1,4 @@
+
 import 'package:creative/data/models/spotratemodel/spotreate_model.dart';
 import 'package:creative/presentation/bloc/fetchspotrate/fetchspotrate_bloc.dart';
 import 'package:creative/presentation/bloc/fetchspotrate/fetchspotrate_event.dart';
@@ -8,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+
+
 
 class CommodityContainer extends StatelessWidget {
   final Commodity commodity;

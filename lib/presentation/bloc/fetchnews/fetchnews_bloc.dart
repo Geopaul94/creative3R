@@ -1,9 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:creative/data/models/newsmodel/news_model.dart';
 import 'package:creative/data/repository/news/fetch_news.dart';
-import 'package:creative/presentation/bloc/authentication/login/fetchnews/fetchnews_event.dart';
-import 'package:creative/presentation/bloc/authentication/login/fetchnews/fetchnews_state.dart';
-import 'package:flutter/material.dart';
+import 'package:creative/presentation/bloc/fetchnews/fetchnews_event.dart';
+import 'package:creative/presentation/bloc/fetchnews/fetchnews_state.dart';
 
 
 import 'package:flutter_bloc/flutter_bloc.dart';

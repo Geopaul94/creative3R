@@ -3,7 +3,7 @@ import 'package:creative/presentation/bloc/authentication/login/login_bloc.dart'
 import 'package:creative/presentation/bloc/authentication/login/login_event.dart';
 import 'package:creative/presentation/bloc/authentication/login/login_state.dart';
 import 'package:creative/presentation/screeens/authentication/forgot_password_screen.dart';
-import 'package:creative/presentation/screeens/bottom_navigation.dart';
+import 'package:creative/presentation/screeens/bottomnvaigation/bottom_navigation.dart';
 import 'package:creative/presentation/widgets/custom_elevated_button.dart';
 import 'package:creative/presentation/widgets/custom_text.dart';
 import 'package:creative/presentation/widgets/custome_snackbar.dart';
@@ -141,13 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                CustomText(
-                                  text: 'Welcome back !',
-                                  fontSize: 30.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color.fromARGB(
-                                      255, 225, 222, 222),
-                                ),
+                               
                                 CustomText(
                                   text: 'Enter your login details',
                                   fontSize: 20.sp,
